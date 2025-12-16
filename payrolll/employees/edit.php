@@ -142,12 +142,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       hire_date = :hire_date, 
                       base_salary = :base_salary, 
                       hourly_rate = :hourly_rate, 
-                      bank_name = :bank_name, 
-                      bank_account = :bank_account, 
-                      tax_id = :tax_id, 
-                      sss_number = :sss_number, 
-                      philhealth_number = :philhealth_number, 
-                      pagibig_number = :pagibig_number,
                       photo = :photo,
                       updated_at = NOW()
                       WHERE id = :id";
@@ -171,12 +165,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $stmt->bindParam(':hire_date', $hireDate);
             $stmt->bindParam(':base_salary', $baseSalary);
             $stmt->bindValue(':hourly_rate', !empty($_POST['hourly_rate']) ? floatval($_POST['hourly_rate']) : null);
-            $stmt->bindValue(':bank_name', sanitize($_POST['bank_name'] ?? ''));
-            $stmt->bindValue(':bank_account', sanitize($_POST['bank_account'] ?? ''));
-            $stmt->bindValue(':tax_id', sanitize($_POST['tax_id'] ?? ''));
-            $stmt->bindValue(':sss_number', sanitize($_POST['sss_number'] ?? ''));
-            $stmt->bindValue(':philhealth_number', sanitize($_POST['philhealth_number'] ?? ''));
-            $stmt->bindValue(':pagibig_number', sanitize($_POST['pagibig_number'] ?? ''));
             $stmt->bindValue(':photo', $photoFilename);
             
             if ($stmt->execute()) {
@@ -406,43 +394,6 @@ require_once __DIR__ . '/../includes/header.php';
                     </div>
                 </div>
 
-                <div class="card mt-3">
-                    <div class="card-header">
-                        <h5 class="mb-0">Bank & Government Information</h5>
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Bank Name</label>
-                                <input type="text" class="form-control" name="bank_name" value="<?php echo htmlspecialchars($employee['bank_name'] ?? ''); ?>">
-                            </div>
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Bank Account</label>
-                                <input type="text" class="form-control" name="bank_account" value="<?php echo htmlspecialchars($employee['bank_account'] ?? ''); ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">Tax ID</label>
-                                <input type="text" class="form-control" name="tax_id" value="<?php echo htmlspecialchars($employee['tax_id'] ?? ''); ?>">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">SSS Number</label>
-                                <input type="text" class="form-control" name="sss_number" value="<?php echo htmlspecialchars($employee['sss_number'] ?? ''); ?>">
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <label class="form-label">PhilHealth Number</label>
-                                <input type="text" class="form-control" name="philhealth_number" value="<?php echo htmlspecialchars($employee['philhealth_number'] ?? ''); ?>">
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-6 mb-3">
-                                <label class="form-label">Pag-IBIG Number</label>
-                                <input type="text" class="form-control" name="pagibig_number" value="<?php echo htmlspecialchars($employee['pagibig_number'] ?? ''); ?>">
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
 
             <div class="col-md-4">
