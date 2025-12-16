@@ -130,21 +130,6 @@ $employee = $stmt->fetch();
             </div>
         </div>
 
-        <div class="col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    <h5 class="mb-0">Bank & Government Info</h5>
-                </div>
-                <div class="card-body">
-                    <p><strong>Bank Name:</strong><br><?php echo htmlspecialchars($employee['bank_name'] ?: '-'); ?></p>
-                    <p><strong>Bank Account:</strong><br><?php echo htmlspecialchars($employee['bank_account'] ?: '-'); ?></p>
-                    <p><strong>Tax ID:</strong><br><?php echo htmlspecialchars($employee['tax_id'] ?: '-'); ?></p>
-                    <p><strong>SSS Number:</strong><br><?php echo htmlspecialchars($employee['sss_number'] ?: '-'); ?></p>
-                    <p><strong>PhilHealth:</strong><br><?php echo htmlspecialchars($employee['philhealth_number'] ?: '-'); ?></p>
-                    <p><strong>Pag-IBIG:</strong><br><?php echo htmlspecialchars($employee['pagibig_number'] ?: '-'); ?></p>
-                </div>
-            </div>
-        </div>
     </div>
 </div>
 
