@@ -1,0 +1,231 @@
+/**
+ * Professional Payroll Management System
+ * Custom Styles
+ */
+
+:root {
+    --primary-color: #0d6efd;
+    --secondary-color: #6c757d;
+    --success-color: #198754;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #0dcaf0;
+    --light-color: #f8f9fa;
+    --dark-color: #212529;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f5f5;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.navbar-nav .nav-link {
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s;
+    margin-bottom: 1.5rem;
+}
+
+.card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card-header {
+    background-color: #fff;
+    border-bottom: 2px solid #e9ecef;
+    font-weight: 600;
+    padding: 1rem 1.25rem;
+}
+
+/* Tables */
+.table {
+    background-color: #fff;
+}
+
+.table thead th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    letter-spacing: 0.5px;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Badges */
+.badge {
+    padding: 0.35em 0.65em;
+    font-weight: 500;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 4px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Forms */
+.form-label {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+    color: #495057;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.form-control.is-invalid,
+.form-select.is-invalid {
+    border-color: var(--danger-color);
+}
+
+/* Dashboard Stats */
+.stat-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.stat-card.success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.stat-card.warning {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.stat-card.info {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.stat-card .stat-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0.5rem 0;
+}
+
+.stat-card .stat-label {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Login Page */
+.login-container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.login-logo i {
+    font-size: 4rem;
+    color: var(--primary-color);
+}
+
+.login-logo h2 {
+    margin-top: 1rem;
+    color: #333;
+    font-weight: 600;
+}
+
+/* Alerts */
+.alert {
+    border-radius: 6px;
+    border: none;
+}
+
+/* DataTables */
+.dataTables_wrapper {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 6px;
+}
+
+/* Loading Spinner */
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stat-card .stat-value {
+        font-size: 2rem;
+    }
+    
+    .card-header {
+        font-size: 0.9rem;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    .btn,
+    .no-print {
+        display: none !important;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #dee2e6;
+    }
+}
+
